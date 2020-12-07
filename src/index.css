@@ -1,10 +1,10 @@
-#results {
-  margin-top: 2em;
-}
-
-body {
+* {
   font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier,
     monospace;
+}
+
+#results {
+  margin-top: 2em;
 }
 
 select,
