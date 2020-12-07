@@ -34,6 +34,7 @@ async function fetchFromFunctionEndpoint({ endpoint }) {
   const response = await fetch(url, options)
     .then((res) => {
       const responseType = res.headers.get('content-type');
+      console.log('response type: ' + JSON.stringify(responseType, null, 2));
 
       if (responseType && responseType.startsWith('text/html')) {
         return res.text();
@@ -50,7 +51,6 @@ async function fetchFromFunctionEndpoint({ endpoint }) {
     .catch((err) => {
       throw new Error(err);
     });
-  console.log(JSON.stringify(response, null, 2));
 
   return response;
 }
