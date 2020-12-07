@@ -53,7 +53,7 @@ Example cloud functions are organized by platform:
     └── index.* (basic site to demonstrate function responses)
 ```
 
-When running the project using the Vercel CLI or Netlify CLI (see [**Quick Start**](##quick-start)), the functions will be available at the same address (`/api/function-name`) regardless of whether or not they are Vercel or Netlify functions.
+When running the project using the Vercel CLI or Netlify CLI (see [**Quick Start**](##quick-start)), the functions will be available at the same address (`/api/function-name`) and will return the same outputs regardless of whether or not they are Vercel or Netlify functions.
 
 ## Quick Start
 
