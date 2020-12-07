@@ -1,5 +1,10 @@
 const countrycitystatejson = require('countrycitystatejson');
 
+/**
+ * Use the countrycitystatejson package to fetch the provinces belonging to a country
+ * @param {Object} event - https://docs.netlify.com/functions/build-with-javascript/#synchronous-function-format
+ * @param {Object} context - https://docs.netlify.com/functions/build-with-javascript/#synchronous-function-format
+ */
 exports.handler = async function (_event, _context) {
   try {
     const countries = countrycitystatejson.getCountries();

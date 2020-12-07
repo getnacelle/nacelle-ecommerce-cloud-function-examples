@@ -1,7 +1,7 @@
 import countrycitystatejson from 'countrycitystatejson';
 
 /**
- * Use the multipassify package to generate a Multipass login URL
+ * Use the countrycitystatejson package to fetch the provinces belonging to a country
  * @param {Object} req  - HTTP request object (see https://vercel.com/docs/runtimes#official-runtimes/node-js/node-js-request-and-response-objects/node-js-helpers)
  * @param {Object} req.body - HTTP request body
  * @param {Object} req.body.countryShortName - Country short name code (e.g. 'US' for United States, 'AR' for Argentina)
