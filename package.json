@@ -6,7 +6,7 @@
     "test:ci": "jest --clearCache",
     "dev": "parcel src/index.html",
     "dev:vercel": "vercel dev",
-    "dev:netlify": "vercel dev",
+    "dev:netlify": "netlify dev",
     "build": "parcel build index.html"
   },
   "repository": {
@@ -40,7 +40,7 @@
     "lint-staged": "^10.2.11",
     "multipassify": "^1.1.0",
     "netlify-cli": "^2.69.1",
-    "parcel-bundler": "^1.12.4",
+    "parcel": "^2.0.0-beta.1",
     "prettier": "^2.1.2",
     "vercel": "^21.0.1"
   },

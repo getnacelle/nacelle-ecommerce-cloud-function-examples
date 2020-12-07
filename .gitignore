@@ -21,3 +21,6 @@ logs
 # CLI output
 .vercel
 .netlify
+
+# Parcel
+.parcel-cache
