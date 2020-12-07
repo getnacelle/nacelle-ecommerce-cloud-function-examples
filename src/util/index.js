@@ -1,29 +1,9 @@
-function depthOf(obj) {
-  // courtesty of Kavi Siegel (https://stackoverflow.com/a/13523953/6387812)
-  var level = 1;
-  for (var key in obj) {
-    if (!obj.hasOwnProperty(key)) continue;
-
-    if (typeof obj[key] == 'object') {
-      var depth = depthOf(obj[key]) + 1;
-      level = Math.max(depth, level);
-    }
-  }
-  return level;
-}
-
 function isObject(obj) {
   return typeof obj === 'object' && Object.keys(obj).length;
 }
 
 function pathConcat(path, delimiter = '') {
   return path.reduce((acc, pathPart) => acc + delimiter + pathPart);
-}
-
-function valueFromPath(sourceObj, path, delimiter = '-') {
-  return path
-    .split(delimiter)
-    .reduce((acc, el) => acc[el] || sourceObj[el], {});
 }
 
 function getValueFromInput({ path }) {
