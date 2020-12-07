@@ -35,15 +35,11 @@ async function fetchFromFunctionEndpoint({ endpoint }) {
     .then((res) => {
       const responseType = res.headers.get('content-type');
 
-      if (responseType && responseType.startsWith('text/')) {
+      if (responseType && responseType.startsWith('text/html')) {
         return res.text();
       }
 
       if (responseType && responseType.startsWith('application/json')) {
-        return res.json();
-      }
-
-      if (!responseType) {
         return res.json();
       }
     })
