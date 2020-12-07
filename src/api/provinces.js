@@ -12,9 +12,11 @@ export default function (req, res) {
     const body = JSON.parse(req.body);
 
     if (!body || !body.countryShortName) {
-      throw new Error(
-        `'countryShortName' is required in the POST body by /api/get-provinces`
-      );
+      res
+        .status(400)
+        .send(
+          `'countryShortName' is required in the POST body by /api/get-provinces`
+        );
     }
 
     res
