@@ -1,6 +1,6 @@
-import countrycitystatejson from 'countrycitystatejson';
+const countrycitystatejson = require('countrycitystatejson');
 
-export async function handler(_event, _context, _callback) {
+exports.handler = async function (_event, _context, _callback) {
   try {
     const countries = countrycitystatejson.getCountries();
 
@@ -16,4 +16,4 @@ export async function handler(_event, _context, _callback) {
       )
     };
   }
-}
+};

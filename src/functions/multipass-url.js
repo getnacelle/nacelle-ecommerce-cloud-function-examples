@@ -1,6 +1,6 @@
-import Multipassify from 'multipassify';
+const Multipassify = require('multipassify');
 
-export async function handler(event, _context, _callback) {
+exports.handler = async function (event, _context, _callback) {
   try {
     const { MYSHOPIFY_DOMAIN, SHOPIFY_MULTIPASS_SECRET } = process.env;
     const { customerData } = JSON.parse(event.body);
@@ -20,4 +20,4 @@ export async function handler(event, _context, _callback) {
       body: JSON.stringify(`Could not generate Multipass URL: ${err.message}`)
     };
   }
-}
+};
