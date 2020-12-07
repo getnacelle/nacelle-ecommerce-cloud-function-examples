@@ -40,6 +40,6 @@ export default async function (req, res) {
 
     res.status(200).send(priceRule);
   } catch (err) {
-    res.status(500).send(err.message);
+    res.status(500).send(`Could not fetch discount price rule: ${err.message}`);
   }
 }

@@ -23,6 +23,10 @@ export default function (req, res) {
       .status(200)
       .send(countrycitystatejson.getStatesByShort(body.countryShortName));
   } catch (err) {
-    res.status(500).send(err.message);
+    res
+      .status(500)
+      .send(
+        `Could not find states or provinces for country with name ${countryShortName} in countries database: ${err.message}`
+      );
   }
 }

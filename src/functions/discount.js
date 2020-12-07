@@ -47,7 +47,7 @@ exports.handler = async function (event, _context) {
   } catch (err) {
     return {
       statusCode: 500,
-      body: err.message
+      body: `Could not fetch discount price rule: ${err.message}`
     };
   }
 };

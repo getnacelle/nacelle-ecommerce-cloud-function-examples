@@ -9,6 +9,10 @@ export default function (_req, res) {
   try {
     res.status(200).send(countrycitystatejson.getCountries());
   } catch (err) {
-    res.status(500).send(err.message);
+    res
+      .status(500)
+      .send(
+        `Could not find get countries from countries database: ${err.message}`
+      );
   }
 }
