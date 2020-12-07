@@ -2,17 +2,17 @@ import { handleFormInputs, getBodyProperties } from '/util';
 
 const endpoints = {
   // configure endpoints and the default values of their required inputs
-  'get-countries': {
+  countries: {
     variables: null,
     method: 'GET',
     result: ''
   },
-  'get-provinces': {
+  provinces: {
     variables: { countryShortName: 'US' },
     method: 'POST',
     result: ''
   },
-  'get-multipass-url': {
+  'multipass-url': {
     variables: {
       customerData: {
         email: 'example@getnacelle.com',
@@ -35,11 +35,15 @@ async function fetchFromFunctionEndpoint({ endpoint }) {
     .then((res) => {
       const responseType = res.headers.get('content-type');
 
-      if (responseType.startsWith('text/html')) {
+      if (responseType && responseType.startsWith('text/html')) {
         return res.text();
       }
 
-      if (responseType.startsWith('application/json')) {
+      if (responseType && responseType.startsWith('application/json')) {
+        return res.json();
+      }
+
+      if (!responseType) {
         return res.json();
       }
     })

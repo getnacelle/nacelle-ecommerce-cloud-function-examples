@@ -1,20 +1,20 @@
-const countryHandler = require("countrycitystatejson")
+import countrycitystatejson from 'countrycitystatejson';
 
-exports.handler = async function(event, context, callback) {
-  const { countryShortName } = JSON.parse(event.body)
-  const provinces = countryHandler.getStatesByShort(countryShortName)
+export async function handler(event, _context, _callback) {
+  try {
+    const { countryShortName } = JSON.parse(event.body);
+    const provinces = countrycitystatejson.getStatesByShort(countryShortName);
 
-  if (provinces) {
     return {
       statusCode: 200,
       body: JSON.stringify(provinces)
-    }
-  } else {
+    };
+  } catch (err) {
     return {
       statusCode: 500,
       body: JSON.stringify(
-        `Could not find states or provinces for country with name ${countryShortName} in countries database`
+        `Could not find states or provinces for country with name ${countryShortName} in countries database: ${err.message}`
       )
-    }
+    };
   }
 }

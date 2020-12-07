@@ -1,19 +1,19 @@
-const countryHandler = require("countrycitystatejson")
+import countrycitystatejson from 'countrycitystatejson';
 
-exports.handler = async function(event, context, callback) {
-  const countries = countryHandler.getCountries()
+export async function handler(_event, _context, _callback) {
+  try {
+    const countries = countrycitystatejson.getCountries();
 
-  if (countries && countries.length) {
     return {
       statusCode: 200,
       body: JSON.stringify(countries)
-    }
-  } else {
+    };
+  } catch (err) {
     return {
       statusCode: 500,
       body: JSON.stringify(
-        `Could not find get countries from countries database`
+        `Could not find get countries from countries database: ${err.message}`
       )
-    }
+    };
   }
 }
