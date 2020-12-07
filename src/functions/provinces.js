@@ -7,15 +7,12 @@ exports.handler = async function (event, _context, _callback) {
 
     return {
       statusCode: 200,
-      body: JSON.stringify(provinces),
-      headers: { 'content-type': 'text/html' }
+      body: provinces
     };
   } catch (err) {
     return {
       statusCode: 500,
-      body: JSON.stringify(
-        `Could not find states or provinces for country with name ${countryShortName} in countries database: ${err.message}`
-      )
+      body: `Could not find states or provinces for country with name ${countryShortName} in countries database: ${err.message}`
     };
   }
 };

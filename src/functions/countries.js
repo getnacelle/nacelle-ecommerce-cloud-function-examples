@@ -6,15 +6,12 @@ exports.handler = async function (_event, _context, _callback) {
 
     return {
       statusCode: 200,
-      body: JSON.stringify(countries),
-      headers: { 'content-type': 'text/html' }
+      body: countries
     };
   } catch (err) {
     return {
       statusCode: 500,
-      body: JSON.stringify(
-        `Could not find get countries from countries database: ${err.message}`
-      )
+      body: `Could not find get countries from countries database: ${err.message}`
     };
   }
 };

@@ -18,13 +18,12 @@ exports.handler = async function (event, _context, _callback) {
 
     return {
       statusCode: 200,
-      body: JSON.stringify(multipassUrl),
-      headers: { 'content-type': 'text/html' }
+      body: multipassUrl
     };
   } catch (err) {
     return {
       statusCode: 500,
-      body: JSON.stringify(`Could not generate Multipass URL: ${err.message}`)
+      body: `Could not generate Multipass URL: ${err.message}`
     };
   }
 };
