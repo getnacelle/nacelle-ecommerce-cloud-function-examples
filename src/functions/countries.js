@@ -6,7 +6,8 @@ exports.handler = async function (_event, _context, _callback) {
 
     return {
       statusCode: 200,
-      body: JSON.stringify(countries, null, 2)
+      body: JSON.stringify(countries),
+      headers: { 'content-type': 'application/json' }
     };
   } catch (err) {
     return {
