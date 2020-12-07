@@ -1,0 +1,50 @@
+{
+  "name": "nacelle-ecommerce-cloud-function-examples",
+  "version": "1.0.0",
+  "description": "A collection of example cloud functions that add functionality to your eCommerce storefront",
+  "scripts": {
+    "test:ci": "jest --clearCache",
+    "dev": "parcel src/index.html",
+    "dev:vercel": "vercel dev",
+    "dev:netlify": "vercel dev",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/getnacelle/nacelle-ecommerce-cloud-function-examples.git"
+  },
+  "keywords": [
+    "nacelle",
+    "eCommerce",
+    "e-commerce",
+    "functions",
+    "serverless",
+    "vercel",
+    "netlify"
+  ],
+  "author": "Nacelle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/getnacelle/nacelle-ecommerce-cloud-function-examples/issues"
+  },
+  "homepage": "https://github.com/getnacelle/nacelle-ecommerce-cloud-function-examples#readme",
+  "devDependencies": {
+    "countrycitystatejson": "^20.8.9-a",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.6.0",
+    "eslint-plugin-jest-dom": "^3.1.7",
+    "husky": "^4.2.5",
+    "isomorphic-unfetch": "^3.1.0",
+    "jest": "^26.3.0",
+    "jest-watch-typeahead": "^0.6.0",
+    "lint-staged": "^10.2.11",
+    "multipassify": "^1.1.0",
+    "netlify-cli": "^2.69.1",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^2.1.2",
+    "vercel": "^21.0.1"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1"
+  }
+}
