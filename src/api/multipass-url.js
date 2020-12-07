@@ -13,33 +13,32 @@ export default function (req, res) {
   try {
     const requiredVars = ['MYSHOPIFY_DOMAIN', 'SHOPIFY_MULTIPASS_SECRET'];
 
-    // // Check that the variables used in this function have been provided
-    // requiredVars.forEach((envVar) => {
-    //   if (!process.env[envVar]) {
-    //     res
-    //       .status(400)
-    //       .send(`'${envVar}' is required by /api/get-multipass-url`);
-    //   }
-    // });
+    // Check that the variables used in this function have been provided
+    requiredVars.forEach((envVar) => {
+      if (!process.env[envVar]) {
+        res
+          .status(400)
+          .send(`'${envVar}' is required by /api/get-multipass-url`);
+      }
+    });
 
     const { MYSHOPIFY_DOMAIN, SHOPIFY_MULTIPASS_SECRET } = process.env;
     const { customerData } = JSON.parse(req.body);
 
-    // // Check that the variables used in this function have been provided
-    // ['email', 'return_to'].forEach((param) => {
-    //   if (!customerData[param]) {
-    //     res
-    //       .status(400)
-    //       .send(
-    //         `'customerData.${param}' is required by /api/get-multipass-url`
-    //       );
-    //   }
-    // });
+    // Check that the variables used in this function have been provided
+    ['email', 'return_to'].forEach((param) => {
+      if (!customerData[param]) {
+        res
+          .status(400)
+          .send(
+            `'customerData.${param}' is required by /api/get-multipass-url`
+          );
+      }
+    });
 
     const multipassify = new Multipassify(SHOPIFY_MULTIPASS_SECRET);
-    console.log(`DOMAIN: ${MYSHOPIFY_DOMAIN}`);
-    console.log(`CUSTOMER DATA:: ${JSON.stringify(req.body, null, 2)}`);
     const url = multipassify.generateUrl(customerData, MYSHOPIFY_DOMAIN);
+
     res.status(200).send(url);
   } catch (err) {
     res.status(500).send(err);
