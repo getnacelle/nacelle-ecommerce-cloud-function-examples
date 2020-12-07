@@ -63,6 +63,14 @@ Install dependencies:
 npm i
 ```
 
+Create `src/.env` and add the following environment variables from your Shopify Plus store:
+
+```dotenv
+SHOPIFY_ADMIN_PASSWORD=my-shopify-admin-password
+SHOPIFY_MULTIPASS_SECRET=my-shopify-multipass-secret # see https://shopify.dev/docs/admin-api/rest/reference/plus/multipass
+MYSHOPIFY_DOMAIN=example.myshopify.com
+```
+
 Run the example site with the platform of your choosing:
 
 ```
