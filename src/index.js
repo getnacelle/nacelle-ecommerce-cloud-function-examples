@@ -12,6 +12,11 @@ const endpoints = {
     method: 'POST',
     result: ''
   },
+  discount: {
+    variables: { discountCode: 'BFCM2020' },
+    method: 'POST',
+    result: ''
+  },
   'multipass-url': {
     variables: {
       customerData: {
