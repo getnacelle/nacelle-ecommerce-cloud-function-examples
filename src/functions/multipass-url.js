@@ -2,11 +2,10 @@ const Multipassify = require('multipassify');
 
 /**
  * Use the multipassify package to generate a Multipass login URL
- * @param {Object} event  - https://docs.netlify.com/functions/build-with-javascript/#synchronous-function-format
+ * @param {Object} event - https://docs.netlify.com/functions/build-with-javascript/#synchronous-function-format
  * @param {Object} context - https://docs.netlify.com/functions/build-with-javascript/#synchronous-function-format
- * @param {Object} callback - https://docs.netlify.com/functions/build-with-javascript/#synchronous-function-format
  */
-exports.handler = async function (event, _context, _callback) {
+exports.handler = async function (event, _context) {
   try {
     const { MYSHOPIFY_DOMAIN, SHOPIFY_MULTIPASS_SECRET } = process.env;
     const { customerData } = JSON.parse(event.body);

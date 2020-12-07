@@ -1,6 +1,6 @@
 const countrycitystatejson = require('countrycitystatejson');
 
-exports.handler = async function (event, _context, _callback) {
+exports.handler = async function (event, _context) {
   try {
     const { countryShortName } = JSON.parse(event.body);
     const provinces = countrycitystatejson.getStatesByShort(countryShortName);
