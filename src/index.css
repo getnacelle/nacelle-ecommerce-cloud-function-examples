@@ -3,6 +3,13 @@
     monospace;
 }
 
+#controls {
+  display: grid;
+  grid-gap: 1em;
+  margin: 1em auto;
+  max-width: 80vw;
+}
+
 #results {
   margin-top: 2em;
 }
@@ -21,7 +28,6 @@ button {
   color: white;
   background-color: rgb(22, 22, 22);
   padding: 1em;
-  margin-left: 2em;
 }
 
 form {
@@ -29,5 +35,16 @@ form {
 }
 
 input {
-  margin-top: 1em;
+  margin-top: 3em;
+}
+
+@media only screen and (min-width: 599px) {
+  #controls {
+    display: block;
+    max-width: unset;
+  }
+
+  select {
+    margin-right: 2em;
+  }
 }
