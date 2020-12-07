@@ -7,7 +7,7 @@ exports.handler = async function (event, _context, _callback) {
 
     return {
       statusCode: 200,
-      body: provinces
+      body: JSON.stringify(provinces, null, 2)
     };
   } catch (err) {
     return {
